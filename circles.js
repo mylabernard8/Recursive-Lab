@@ -1,6 +1,6 @@
-// Recursive drawing of circles along both x and y axes
-// Base case: Stop recursion when the circle's radius is below a certain size
-// Recursive case: Draw smaller circles at specific offsets from the current circle
+// recursive drawing of squares along both x and y axes
+// base case: Stop recursion when the circle's radius is below a certain size
+// recursive case: draw smaller squares at specific offsets from the current square
 
 function setup() {
   createCanvas(400, 400); // Set up the canvas size
@@ -18,5 +18,15 @@ function rSquare(x, y, size) {
     return;
   }
 
-  // drawing recursive squares (I still need to flush out and implement the recursive case)
+  // drawing first square
+  square(x - size / 2, y - size / 2, size);
+
+  // draw smaller squares
+  const newSize = size / 2;
+
+  // recursive case: recursive formula for each corner of the squares
+  rSquare(x - newSize, y - newSize, newSize); // Top-left
+  rSquare(x + newSize, y - newSize, newSize); // Top-right
+  rSquare(x - newSize, y + newSize, newSize); // Bottom-left
+  rSquare(x + newSize, y + newSize, newSize); // Bottom-right
 }
