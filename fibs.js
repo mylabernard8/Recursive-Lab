@@ -17,3 +17,10 @@ function fib(n) {
   return fib(n - 1) + fib(n - 2);   // recursive calculation
 }
 
+function keyPressed() {
+  if (key === " ") { // if space bar is pressed
+    n++;//increases value by one
+    redraw(); // redraw the canvas with the new Fibonacci number
+  }
+}
+
