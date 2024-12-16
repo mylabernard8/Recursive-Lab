@@ -9,6 +9,7 @@ function setup() {
 
 function draw() {
   background(220);
+  console.log(fibs); // logging numbers in console
   text(`${n}th Fibonacci number: ${fib(n)}`, width / 2, height / 2);//text
 }
 
